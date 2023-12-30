@@ -5,6 +5,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import config from "./config.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 // Create an Express application
 const app = express();
@@ -30,6 +31,7 @@ connection.once("open", () => {
 });
 
 // Define routes (to be added later)
+app.use("/", taskRoutes);
 
 // Start the server and listen on the specified port
 app.listen(port, () => {
